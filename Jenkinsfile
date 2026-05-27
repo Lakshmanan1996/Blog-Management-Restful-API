@@ -92,36 +92,8 @@ pipeline
             }
         }
 
-        /* =====================================================
-           OWASP DEPENDENCY CHECK
-        ===================================================== 
-
-       stage('OWASP Dependency Check') {
-            agent { label 'workernode2' }
-
-            steps {
-                unstash 'source-code'
-
-                withCredentials([string(credentialsId: 'NVD_API_KEY', variable: 'NVD_API_KEY')]) {
-
-                    dependencyCheck(
-                        odcInstallation: 'OWASP-DC',
-                        additionalArguments: """
-                            --scan ${WORKSPACE}
-                            --format ALL
-                            --out ${WORKSPACE}/dependency-check-report
-                            --data /var/jenkins_home/odc-data
-                            --noupdate
-                            --nvdApiKey ${NVD_API_KEY}
-                            --exclude **/node_modules/**
-                            --exclude **/dist/**
-                            --exclude **/target/**
-                            --exclude **/.git/**
-                        """
-                    )
-                }
-            }
-        }*/
+        
+                           
 
         /* =====================================================
            DOCKER BUILD
