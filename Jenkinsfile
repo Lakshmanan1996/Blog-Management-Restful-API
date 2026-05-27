@@ -1,4 +1,5 @@
-pipeline {
+pipeline 
+{
 
     agent none
 
@@ -182,10 +183,8 @@ pipeline {
                      
             }
         }
-    
 
-
-
+    }    
     post {
         success {
             echo "✅ Blog-API CI Pipeline SUCCESS"
@@ -195,3 +194,4 @@ pipeline {
         }
     }
 }
+
