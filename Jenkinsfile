@@ -104,22 +104,19 @@ pipeline
 
                 dependencyCheck(
                     odcInstallation: 'OWASP-DC',
-                    additionalArguments: '''
+                    additionalArguments: """
                         --scan ${WORKSPACE}
                         --format ALL
                         --out ${WORKSPACE}/dependency-check-report
-
                         --data /var/jenkins_home/odc-data
                         --noupdate
-
-                        --nvdApiKey YOUR_NVD_API_KEY
-
+                        --nvdApiKey ${NVD_API_KEY}
                         --exclude **/node_modules/**
                         --exclude **/dist/**
                         --exclude **/target/**
                         --exclude **/.git/**
-                    '''
-                )   
+                    """
+                )
             }
         }
 
