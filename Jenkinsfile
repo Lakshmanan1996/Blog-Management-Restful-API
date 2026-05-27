@@ -138,11 +138,11 @@ pipeline {
                 docker build -t ${DOCKERHUB_USER}/${IMAGE1}:${BUILD_NUMBER} .
                 docker tag ${DOCKERHUB_USER}/${IMAGE1}:${BUILD_NUMBER} ${DOCKERHUB_USER}/${IMAGE1}:latest 
                 """
-                }
-                
-                
             }
+                
+                
         }
+        
 
         /* =====================================================
            TRIVY IMAGE SCAN
@@ -182,9 +182,9 @@ pipeline {
                      
             }
         }
-    }
+    
 
-}
+
 
     post {
         success {
@@ -194,3 +194,4 @@ pipeline {
             echo "❌ Blog-API CI Pipeline FAILED"
         }
     }
+}
