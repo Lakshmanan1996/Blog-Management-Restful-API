@@ -184,6 +184,8 @@ pipeline {
         }
     }
 
+}
+
     post {
         success {
             echo "✅ Blog-API CI Pipeline SUCCESS"
@@ -192,4 +194,3 @@ pipeline {
             echo "❌ Blog-API CI Pipeline FAILED"
         }
     }
-}
